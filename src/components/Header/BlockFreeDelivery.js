@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import imageClose from '../../img/close.svg';
 import imageDelivery from '../../img/delivery.svg';
-import { getValueTop } from '../../helpers/helpers';
 
 const BlockFreeDelivery = () => {
   const [visible, setVisible] = useState(true);

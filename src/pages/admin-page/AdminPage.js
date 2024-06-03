@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import Users from '../../components/Admin/Users';
 import Products from '../../components/Admin/Products';
 import Category from '../../components/Admin/Category';
-import NotLogin from '../../components/Form/NotLogin';
 
 // Styles
 import '../../components/Admin/style.scss';
@@ -15,10 +14,6 @@ const Admin = () => {
     document.title = 'Admin panel';
   }, []);
   const { user } = useSelector((state) => state.user);
-
-  // if (user.role !== 'ADMIN' && user.role !== 'MODERATOR') {
-  //   return <NotLogin />;
-  // }
 
   return (
     <div className="admin-panel">

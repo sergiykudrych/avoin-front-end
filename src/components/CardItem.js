@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { API_URL } from '../http';
 
 const Card = ({ image, title, price, slug, modify }) => {
   const handleClick = () => {
