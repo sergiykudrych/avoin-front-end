@@ -1,0 +1,277 @@
+.admin-panel {
+  max-width: var(--container);
+  padding: 15px 28px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .admin-panel {
+    padding: 15px;
+  }
+}
+.block-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.block-main {
+  margin: 20px 0;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: 1px solid #000;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.product-block {
+  margin-top: 20px;
+}
+.main__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 5px;
+  & img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  &-title {
+    font-size: 16px;
+    flex: 0 0 350px;
+    color: #000;
+  }
+  &-price {
+    flex: 0 0 100px;
+  }
+  &-description {
+    flex: 1;
+  }
+}
+
+.main__buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  & button,
+  & a {
+    border: none;
+    & svg {
+      transition: transform 0.2s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover svg {
+        cursor: pointer;
+        transform: scale(1.3);
+      }
+    }
+  }
+  & .edit svg {
+    background-color: orange;
+    fill: #fff;
+    padding: 5px;
+    font-size: 25px;
+  }
+  & .delete svg {
+    background-color: red;
+    fill: #fff;
+    padding: 5px;
+    font-size: 25px;
+  }
+}
+.main__buttons.disabled {
+  & a,
+  & button {
+    pointer-events: none;
+  }
+}
+
+.button {
+  display: block;
+  text-align: center;
+  width: 200px;
+  border-radius: 15px;
+  padding: 10px 0px;
+  margin: 0 auto;
+  background-color: var(--dark-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+  text-decoration: none;
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000003c;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 100;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & h2 {
+      font-size: 18px;
+    }
+  }
+  &__roles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    & button {
+      padding: 10px 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      transition: all 0.3s ease 0s;
+      font-weight: 600;
+      &:hover {
+        transform: scale(1.1);
+        background-color: #e3e3e3;
+      }
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    & button {
+      width: 80px;
+      padding: 10px 0px;
+      border: none;
+      transition: all 0.5s ease 0s;
+      border-radius: 15px;
+      font-weight: 600;
+      &:disabled {
+        background-color: #e3e3e3 !important;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1);
+          cursor: not-allowed;
+        }
+      }
+      &.update {
+        background-color: green;
+        color: #fff;
+      }
+
+      &.cancel {
+        background-color: red;
+        color: #fff;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+.main__item {
+  &-email {
+    flex: 0 0 400px;
+  }
+  &-name {
+    flex: 0 0 150px;
+  }
+  & img {
+    flex: 0 0 50px;
+  }
+  &-active {
+    flex: 0 0 300px;
+    text-align: center;
+  }
+  &-role {
+    flex: 1;
+    text-align: center;
+  }
+}
+.create-category {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
+  gap: 0 10px;
+  margin-top: 20px;
+  & label {
+    display: block;
+  }
+  & input {
+    width: 100%;
+    margin-top: 15px;
+    display: block;
+    padding: 10px;
+  }
+  & button {
+    grid-column: 1/3;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}
+.category.main__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .main__item-title {
+    flex: 0 0 150px;
+  }
+}
+
+@media (max-width: 850px) {
+  .main__item-title,
+  .main__item-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .main__item-price {
+    flex: 0 0 40px;
+  }
+  .block-main {
+    max-height: 250px;
+  }
+}
+@media (max-width: 460px) {
+  .main__item-price,
+  .main__item-description {
+    display: none;
+  }
+  .main__item-title {
+    margin-right: auto;
+    flex: 0 0 200px;
+  }
+}
+@media (max-width: 375px) {
+  .main__item-title {
+    flex: 0 0 120px;
+  }
+}

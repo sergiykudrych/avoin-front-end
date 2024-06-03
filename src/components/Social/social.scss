@@ -1,0 +1,31 @@
+.social {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+.social__item {
+  display: block;
+}
+.social__item a {
+  display: flex;
+  align-items: center;
+}
+.social__item a svg path {
+  transition: all 0.3s ease 0s;
+}
+.social__item a svg:hover path {
+  fill: #4a4566;
+}
+.social.contact {
+  justify-content: center;
+}
+.social.contact .social__item a svg path {
+  fill: #000;
+}
+.social.contact .social__item a svg {
+  transition: transform 0.3s ease 0s;
+}
+.social.contact .social__item a svg:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,132 @@
+.our-brand {
+  padding: 88px 0;
+}
+.our-brand__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.our-brand__title {
+  font-family: var(--second-family);
+  font-size: var(--fz-xl);
+  font-weight: 400;
+  color: var(--dark-primary);
+  max-width: 717px;
+}
+/* About */
+
+.about__content {
+  display: flex;
+}
+.about__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: var(--size-60);
+  padding-bottom: var(--size-60);
+  padding-right: var(--size-50);
+  padding-left: max(20px, calc((100vw - 1310px) / 2));
+  width: 50%;
+}
+.about__title {
+  margin-bottom: 25px;
+  max-width: 514px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--dark-primary);
+}
+.about__description {
+  max-width: 514px;
+  color: #505977;
+  font-size: var(--fz-s);
+}
+.about__description:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+.about__button {
+  margin-top: auto;
+}
+.about__image {
+  display: block;
+  flex-shrink: 0;
+  width: 50%;
+  object-fit: cover;
+}
+.about__content.about-reverse {
+  flex-direction: row-reverse;
+  padding: var(--size-60) 0;
+}
+.about__content.about-reverse .about__info {
+  padding-right: max(20px, calc((100vw - 1310px) / 2));
+  padding-left: var(--size-50);
+}
+
+@media (max-width: 970px) {
+  .our-brand {
+    padding: 32px 0;
+  }
+  .our-brand__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+}
+
+@media (max-width: 880px) {
+  .about__image {
+    height: 500px;
+  }
+  .about__description:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .about__image {
+    height: 400px;
+  }
+  .about__title {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  .about__description:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .about__content.about-reverse {
+    flex-direction: column-reverse;
+  }
+  .about__content {
+    flex-direction: column;
+  }
+  .about__image {
+    width: 100%;
+  }
+  .about__info {
+    padding: 38px 15px;
+    width: 100%;
+  }
+  .about__content.about-reverse .about__info {
+    background-color: var(--light-grey);
+  }
+  .about__description {
+    max-width: 100%;
+    color: #505977;
+    font-size: var(--fz-s);
+  }
+  .about__button {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .about__button {
+    width: 100%;
+    background-color: var(--white);
+  }
+  .about__image {
+    width: 100%;
+    height: calc(100vw - 40px);
+  }
+}

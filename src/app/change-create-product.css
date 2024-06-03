@@ -1,0 +1,35 @@
+.change-create__product {
+  max-width: var(--container);
+  padding: 30px 28px;
+}
+@media (max-width: 800px) {
+  .change-create__product {
+    max-width: var(--container);
+    padding: 30px 15px;
+  }
+}
+.change-create__product,
+.change-create__product form label,
+.change-create__product form {
+  display: flex;
+  flex-direction: column;
+}
+.change-create__product form {
+  gap: 10px;
+  margin-top: 10px;
+}
+.change-create__product form label {
+  gap: 10px;
+}
+.change-create__product form label select,
+.change-create__product form label input {
+  padding: 10px;
+}
+.change-create__product form label span {
+  opacity: 0.5;
+  font-size: 14px;
+}
+.change-create__product form button {
+  margin: 0 auto;
+  width: 200px;
+}
