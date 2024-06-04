@@ -14,7 +14,7 @@ import Card from '../CardItem';
 const Products = () => {
   return (
     <>
-      <section className="products">
+      <section className="products scroll">
         <div className="container">
           <h2 className="products__title title">New ceramics</h2>
           <ul className="products__list grid list-reset products__list-grid">
@@ -33,7 +33,7 @@ const Products = () => {
       <section className="products scroll">
         <div className="container">
           <h2 className="products__title title">Our popular products</h2>
-          <ul className="products__list grid list-reset">
+          <ul className="products__list grid list-reset products__list-grid">
             <Card
               image={productImage5}
               title="The Poplar suede sofa"
