@@ -207,6 +207,10 @@
   .products.scroll .products__list .products__item:nth-child(2) {
     order: -1;
   }
+  .products.scroll .product__image img {
+    width: 305px;
+    height: 375px;
+  }
 }
 @media (max-width: 450px) {
   .product__image img {
