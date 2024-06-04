@@ -7,8 +7,10 @@ import './form.scss';
 const NotLogin = () => {
   return (
     <div className="not-login">
-      <h1>No access</h1>
-      <Link to="/login">Log in</Link>
+      <h2>You are not authorized or do not have access</h2>
+      <Link to="/login" className="not-login__link btn btn--dark">
+        Log in
+      </Link>
     </div>
   );
 };

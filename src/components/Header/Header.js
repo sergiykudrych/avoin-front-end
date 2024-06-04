@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getCategory } from '../../features/category/CategorySlice';
@@ -18,6 +18,8 @@ const Header = () => {
   const [openCategory, setOpenCategory] = useState(false);
   const [search, setSearch] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 425);
+  const header = useRef(null);
+
   useEffect(() => {
     dispatch(getCategory())
       .unwrap()
@@ -39,11 +41,19 @@ const Header = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   useEffect(() => {
-    const heightHeader = document.querySelector('.header').clientHeight;
-    const heightBlockFreeDelivery = document.querySelector('.block-free-delivery').clientHeight;
-    document.querySelector('.header').style.top = `${heightBlockFreeDelivery}px`;
-    document.querySelector('.wrapper').style.marginTop = `${heightBlockFreeDelivery + heightHeader}px`;
+    const scrollPage = () => {
+      if (window.pageYOffset > 100) {
+        header.current.classList.add('fixed');
+      } else {
+        header.current.classList.remove('fixed');
+      }
+    };
+    window.addEventListener('scroll', scrollPage);
+    return () => {
+      window.removeEventListener('scroll', scrollPage);
+    };
   }, []);
 
   const openMenu = (value) => {
@@ -85,7 +95,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header ref={header} className="header">
         <div className="header-container">
           <Link onClick={() => handleClickMenu()} to="/" className="logo">
             <img src={logoIcon} alt="logo" />
