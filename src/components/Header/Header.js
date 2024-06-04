@@ -74,6 +74,12 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const categoris = () => {
     return (
       <ul className={'category-body list-reset' + (openCategory ? ' _active' : '')}>

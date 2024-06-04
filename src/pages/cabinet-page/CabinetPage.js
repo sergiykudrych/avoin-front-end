@@ -23,8 +23,11 @@ const Cabinet = () => {
   const [userImage, setUserImage] = useState([]);
   const [changeImage, setChangeImage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     document.title = 'Cabinet';
     user.userName && setUserName(user.userName);
   }, [user.userName]);

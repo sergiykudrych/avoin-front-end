@@ -17,6 +17,10 @@ const Login = () => {
 
   useEffect(() => {
     document.title = 'Login';
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }, []);
   const handleLogin = async (e) => {
     e.preventDefault();

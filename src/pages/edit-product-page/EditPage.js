@@ -10,6 +10,12 @@ import FormProduct from '../../components/Form/FormProduct';
 import NotLogin from '../../components/Form/NotLogin';
 
 const EditProduct = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const { slug } = useParams();

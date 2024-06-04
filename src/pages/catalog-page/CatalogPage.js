@@ -14,7 +14,10 @@ const CatalogPage = () => {
   const formattedName = slug.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }, []);
   useEffect(() => {
     document.title = `${formattedName} - Catalog`;

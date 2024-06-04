@@ -130,7 +130,6 @@
     display: block;
     object-fit: cover;
     max-width: 100%;
-    min-height: 218px;
   }
   &__content {
     display: flex;
@@ -207,7 +206,8 @@
   .product__image img {
     object-fit: cover;
     width: 100%;
-    height: calc(((100vw - 30px - 20px) / 2) + 50px);
+    height: 100%;
+    max-height: 218px;
   }
   .products.scroll .products__list {
     display: flex;

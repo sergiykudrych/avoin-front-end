@@ -9,6 +9,10 @@ import OurBrand from '../../components/About/OurBrand';
 
 const AboutPage = () => {
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     document.title = 'About';
   }, []);
   return (

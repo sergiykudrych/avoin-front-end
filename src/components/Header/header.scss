@@ -36,7 +36,7 @@
 @keyframes show_header {
   0% {
     opacity: 0;
-    top: -70px;
+    top: -10px;
   }
   100% {
     opacity: 1;
@@ -51,7 +51,7 @@
   top: 0;
   left: 0;
   animation-name: show_header;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   background: #fff;
   z-index: 5;
   width: 100%;

@@ -11,6 +11,10 @@ import '../../components/Admin/style.scss';
 
 const Admin = () => {
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     document.title = 'Admin panel';
   }, []);
   const { user } = useSelector((state) => state.user);

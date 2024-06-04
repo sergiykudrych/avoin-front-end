@@ -19,6 +19,12 @@ import Image from '../../img/hero-about.jpg';
 import Loader from '../../components/Loader/Loader';
 
 const ProductPage = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const { slug } = useParams();
   const [item, setItem] = useState([]);
 

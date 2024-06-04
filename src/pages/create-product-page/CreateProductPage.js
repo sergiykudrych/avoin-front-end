@@ -10,6 +10,12 @@ import NotLogin from '../../components/Form/NotLogin';
 // Styles
 import '../../app/change-create-product.css';
 const CreateProduct = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const [uploadImages, setUploadImages] = useState([]);

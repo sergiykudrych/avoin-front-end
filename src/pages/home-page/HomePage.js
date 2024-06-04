@@ -13,6 +13,10 @@ import './home-page.scss';
 const Home = () => {
   useEffect(() => {
     document.title = 'Home';
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }, []);
   return (
     <div className="home">

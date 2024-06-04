@@ -8,6 +8,10 @@ import Social from '../../components/Social/Social';
 const ContactPage = () => {
   useEffect(() => {
     document.title = 'Contact us';
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }, []);
   return (
     <div className="contact">

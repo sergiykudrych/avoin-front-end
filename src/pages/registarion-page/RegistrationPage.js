@@ -8,6 +8,12 @@ import { setNotification } from '../../features/notification/NotificationSlice';
 import '../login-page/auth.scss';
 
 const Registration = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLoading, error } = useSelector((state) => state.user);
@@ -18,6 +24,7 @@ const Registration = () => {
   useEffect(() => {
     document.title = 'Registration';
   }, []);
+
   // Функція для обробки входу
   const handleRegistration = async (e) => {
     e.preventDefault();

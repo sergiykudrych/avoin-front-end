@@ -12,6 +12,10 @@ import OrderForm from '../../components/Form/OrderForm';
 const Order = () => {
   useEffect(() => {
     document.title = 'Order';
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }, []);
 
   const { items, totalPrice } = useSelector((state) => state.cart);

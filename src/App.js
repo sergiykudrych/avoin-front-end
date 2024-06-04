@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { checkAuth } from './features/user/UserSlice';
-import { setNotification } from './features/notification/NotificationSlice';
 import { addItem } from './features/cart/CartSlice';
 
 // Pages
@@ -31,13 +30,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      dispatch(checkAuth())
-        .unwrap()
-        .then((response) => {})
-        .catch((error) => {
-          dispatch(setNotification({ type: 'error', message: 'error auth' }));
-          console.error(error.message);
-        });
+      dispatch(checkAuth());
     }
     if (localStorage.getItem('cart')) {
       const items = JSON.parse(localStorage.getItem('cart'));
