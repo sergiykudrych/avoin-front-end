@@ -187,7 +187,7 @@
     min-width: 305px;
   }
 }
-@media (max-width: 1376px) {
+@media (min-width: 661px) and (max-width: 1376px) {
   .products .products__list {
     overflow: hidden;
     overflow-x: scroll;
@@ -199,10 +199,6 @@
   }
 }
 @media (max-width: 660px) {
-  .products__item {
-    grid-column: 6 span;
-    min-width: calc((100vw - 30px - 20px) / 2);
-  }
   .products.scroll .products__list {
     display: flex;
   }
