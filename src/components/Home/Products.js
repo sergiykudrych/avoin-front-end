@@ -17,7 +17,7 @@ const Products = () => {
       <section className="products">
         <div className="container">
           <h2 className="products__title title">New ceramics</h2>
-          <ul className="products__list grid list-reset">
+          <ul className="products__list grid list-reset products__list-grid">
             <Card image={productImage1} title="The Dandy chair" price="250" slug="the-dandy-chair" />
             <Card image={productImage2} title="Ceramic Vases" price="120" slug="timeless-elegance-ceramic-vases-to-accentuate-any-space" />
             <Card image={productImage3} title="Ceramic Vases Every Dcor" price="330" slug="timeless-elegance-ceramic-vases-for-every-dcor" />
