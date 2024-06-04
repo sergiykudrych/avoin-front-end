@@ -34,9 +34,10 @@ export const registration = createAsyncThunk('user/registration', async ({ email
     return rejectWithValue(error.response.data);
   }
 });
-export const checkAuth = createAsyncThunk('user/checkAuth', async (_, { rejectWithValue }) => {
+export const checkAuth = createAsyncThunk('user/checkAuth', async ({ refreshToken }, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`${API_URL}/api/refresh`, { withCredentials: true });
+    // const response = await axios.get(`${API_URL}/api/refresh`, { withCredentials: true });
+    const response = await axios.post(`${API_URL}/api/refresh`, { refreshToken: refreshToken }, { withCredentials: true });
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
@@ -67,6 +68,7 @@ export const userSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         localStorage.setItem('token', action.payload.accessToken);
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
         state.isAuth = true;
         state.user = action.payload.user;
         state.isLoading = false;
@@ -85,6 +87,7 @@ export const userSlice = createSlice({
       .addCase(registration.fulfilled, (state, action) => {
         // Оновлення стану після успішної реєстрації
         localStorage.setItem('token', action.payload.accessToken);
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
         state.isAuth = true;
         state.user = action.payload.user;
         state.isLoading = false;
@@ -102,6 +105,7 @@ export const userSlice = createSlice({
       .addCase(checkAuth.fulfilled, (state, action) => {
         // Оновлення стану після успішної реєстрації
         localStorage.setItem('token', action.payload.accessToken);
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
         state.isAuth = true;
         state.user = action.payload.user;
         state.isLoading = false;

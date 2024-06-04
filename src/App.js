@@ -30,7 +30,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      dispatch(checkAuth());
+      dispatch(checkAuth({ refreshToken: localStorage.getItem('refreshToken') }));
     }
     if (localStorage.getItem('cart')) {
       const items = JSON.parse(localStorage.getItem('cart'));
